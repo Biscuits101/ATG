@@ -334,7 +334,8 @@ SCR_SpawnPoint PlayerSpawn {
    Streamable Disabled
   }
  }
- coords 11807.389 3.798 1370.419
+ coords 11807.389 3.795 1370.419
+ angleY -61.139
  m_fSpawnRadius 0.75
  m_fNoPlayerRadius 0
  m_fNoSightRadius 0

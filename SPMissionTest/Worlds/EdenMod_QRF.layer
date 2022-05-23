@@ -11,8 +11,9 @@ AIWaypointCycle InterceptWaypoint : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWa
   SCR_TimedWaypoint InterceptWaypoint_2 : "{A88F0B6CF25BD1DE}Prefabs/AI/Waypoints/AIWaypoint_Scout.et" {
    coords 29.341 13.775 79.003
    AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
-   CompletionRadius 8
+   CompletionRadius 16
    Autocomplete 1
+   m_holdingTime 1
   }
   SCR_TimedWaypoint InterceptWaypoint_3 : "{B3E7B8DC2BAB8ACC}Prefabs/AI/Waypoints/AIWaypoint_SearchAndDestroy.et" {
    coords -20.081 -1.322 1.221

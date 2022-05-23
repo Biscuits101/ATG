@@ -1,0 +1,9 @@
+SCR_BaseTriggerEntity {
+ ID "596970B9D6947294"
+ TriggerShapeType Sphere
+ SphereRadius 15
+ DrawShape 1
+ TriggerActivationType "All changes"
+ PeriodicQueries 1
+ UpdatePeriod 0.1
+}

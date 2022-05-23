@@ -1,0 +1,54 @@
+AIWaypointCycle InterceptWaypoint : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ coords 11213.334 10.662 1639.669
+ RerunCounter 1
+ CycleWaypoints {
+  "InterceptWaypoint_1" "InterceptWaypoint_2" "InterceptWaypoint_3"
+ }
+ {
+  SCR_AIWaypoint InterceptWaypoint_1 : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+   coords -35.715 14.33 145.531
+  }
+  SCR_TimedWaypoint InterceptWaypoint_2 : "{A88F0B6CF25BD1DE}Prefabs/AI/Waypoints/AIWaypoint_Scout.et" {
+   coords 29.341 13.775 79.003
+   AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+   CompletionRadius 8
+   Autocomplete 1
+  }
+  SCR_TimedWaypoint InterceptWaypoint_3 : "{B3E7B8DC2BAB8ACC}Prefabs/AI/Waypoints/AIWaypoint_SearchAndDestroy.et" {
+   coords -20.081 -1.322 1.221
+   CompletionRadius 12
+  }
+ }
+}
+$grp SCR_AIGroup : "{CB7F6FB01453E387}Prefabs/Groups/QRF_Team.et" {
+ {
+  components {
+   SCR_GroupActivator "{596F6C114B6B5E8A}" {
+    m_sTriggerName "QRF_Trigger"
+   }
+  }
+  coords 11148.469 25.715 1793.093
+  angleY 131.611
+  m_bSpawnImmediately 0
+ }
+ {
+  components {
+   SCR_GroupActivator "{596F6C114B6B5E8A}" {
+    m_sTriggerName "QRF_Trigger"
+   }
+  }
+  coords 11142.684 24.931 1799.025
+  angleY 142.834
+  m_bSpawnImmediately 0
+ }
+ {
+  components {
+   SCR_GroupActivator "{596F6C114B6B5E8A}" {
+    m_sTriggerName "QRF_Trigger"
+   }
+  }
+  coords 11137.685 25.176 1805.232
+  angleY 142.399
+  m_bSpawnImmediately 0
+ }
+}

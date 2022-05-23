@@ -1,0 +1,27 @@
+SCR_SpawnPoint {
+ ID "596CEDD667375F81"
+ components {
+  Hierarchy "{5969632D98B4416B}" {
+  }
+  SCR_FactionControlComponent "{5969632D98B44161}" {
+   m_DefaultFaction "US"
+  }
+  SCR_MapDescriptorComponent "{5969632D98B4411A}" {
+   MainType Spawnpoint
+  }
+  RplComponent "{5969632D98B44115}" {
+   "Self Insert" 0
+   Streamable Disabled
+  }
+ }
+ coords 11864.354 1.759 1281.582
+ m_fSpawnRadius 0.75
+ m_fNoPlayerRadius 0
+ m_fNoSightRadius 0
+ m_sFaction "US"
+ m_bShowInDeployMapOnly 1
+ m_Info SCR_UIInfo "{5969632D98B44ED8}" {
+  Name "Checkpoint"
+  Icon "{0EC117562CA4E65D}UI/Textures/Nametags/nametagPointerDead_ca.edds"
+ }
+}

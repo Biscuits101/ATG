@@ -1,0 +1,20 @@
+SCR_BaseTaskManager {
+ ID "596AA5493B4A2F6A"
+ components {
+  SCR_TextsTaskManagerComponent "{596A9E5DE581F8DA}" {
+   m_aEntries {
+    SCR_TextsTaskManagerEntry "{596A9E5DEF514208}" {
+     m_TextType MOVE
+    }
+   }
+  }
+  SCR_UITaskManagerComponent "{596AA549D1B0B82A}" {
+  }
+ }
+ coords 11185.648 131.152 2062.706
+ userScript "	[Attribute(\"\", UIWidgets.Auto, \"Entity names of intial tasks - assigned to connecting players automatically.\", category: \"TaskManager: COOP\")]"\
+ "	protected ref array<string> m_aInitialTaskNames;"\
+ ""\
+ "	[Attribute(\"US\", UIWidgets.EditBox, \"Faction key to assign to tasks.\", category: \"TaskManager: COOP\")]"\
+ "	protected FactionKey m_sAssignedFaction;"
+}

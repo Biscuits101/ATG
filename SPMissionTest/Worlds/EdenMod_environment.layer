@@ -1,0 +1,46 @@
+GenericEntity : "{C3D9F6A8C253F878}Prefabs/Structures/Signs/Warnings/SignFallingRocks_01.et" {
+ components {
+  RigidBody "{54969A6AA8773997}" {
+  }
+ }
+ coords 11200.682 128.938 2065.451
+ angleX 47.433
+ angleY -134.17
+ angleZ 8.735
+ scale 1.39
+}
+GenericEntity : "{D5C075C617C5BB6E}PrefabsEditable/Auto/Compositions/Slotted/SlotFlatSmall/E_MachineGunNest_S_USSR_01_PKM.et" {
+ coords 11615.808 9.421 2147.219
+ angleY -66.474
+ {
+  GenericEntity {
+   ID "58FEB99B5C34F938"
+   {
+    GameEntity {
+     ID "58FEB999CF41D2D6"
+     components {
+      SCR_BaseCompartmentManagerComponent "{51ACFBB07A14CFA6}" {
+       CompartmentSlots {
+        TurretCompartmentSlot TurretCompartment {
+         DefaultOccupantName "MG_Nest_Team"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
+GameEntity : "{D9842C11742C00CF}Prefabs/Props/Civilian/Fireplace_01.et" {
+ components {
+  SCR_FireplaceComponent "{5876E7F288BF5C8E}" {
+   m_fLV 0.9
+   m_eInitialLightState LIT
+  }
+ }
+ coords 11363.283 69.841 1851.157
+ angleX 3.573
+ angleY -0.112
+ angleZ -1.793
+}

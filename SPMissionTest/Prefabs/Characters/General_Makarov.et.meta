@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{C85A4F8C8131AC10}Prefabs/Characters/Factions/INDFOR/FIA/GeneralMakarov.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+ }
+}

@@ -1,0 +1,217 @@
+SCR_AIGroup TheGeneralGroup {
+ components {
+  AIBehaviorTreeComponent "{59696420491805BC}" {
+   BehaviorTree "{082D5B0D5D33DB1D}AI/BehaviorTrees/Chimera/Group/Group.bt"
+  }
+  AIFormationComponent "{59696420491805AD}" {
+   DefaultFormation "Wedge"
+   "Min Distance to Raytrace an Offset" 1
+  }
+  AIGroupMovementComponent "{5969642049180596}" {
+  }
+  AIGroupSteeringComponent "{5969642049180591}" {
+   "Using Railroad" 0
+  }
+  AIPathfindingComponent "{5969642049180587}" {
+   NavmeshProject "Soldiers"
+  }
+  SCR_AIConfigComponent "{5969642049180519}" {
+   m_aDefaultReactions {
+    SCR_AIIdleReaction "{59696420491805E0}" {
+    }
+   }
+   m_aGoalReactions {
+    SCR_AIGoalReaction_Attack "{59696420491805D7}" {
+     m_eType ATTACK
+    }
+    SCR_AIGoalReaction_GetInVehicle "{59696420491805D1}" {
+     m_eType GET_IN_VEHICLE
+    }
+    SCR_AIGoalReaction_GetOutVehicle "{59696420491805DB}" {
+     m_eType GET_OUT_VEHICLE
+    }
+    SCR_AIGoalReaction_Heal "{59696420491805C4}" {
+     m_eType HEAL
+    }
+    SCR_AIGoalReaction_Defend "{59696420491805CE}" {
+     m_eType DEFEND
+    }
+    SCR_AIGoalReaction_Move "{59696420491805CA}" {
+     m_eType MOVE
+    }
+    SCR_AIGoalReaction_SeekAndDestroy "{5969642049180536}" {
+     m_eType SEEK_DESTROY
+    }
+    SCR_AIGoalReaction_PerformAction "{5969642049180530}" {
+     m_eType PERFORM_ACTION
+    }
+    SCR_AIGoalReaction_Cancel "{596964204918053C}" {
+     m_eType CANCEL
+    }
+    SCR_AIGoalReaction_Follow "{5969642049180526}" {
+     m_eType FOLLOW
+    }
+   }
+   m_aInfoReactions {
+    SCR_AIInfoReaction_Contact "{596964204918052D}" {
+     m_eType CONTACT
+    }
+    SCR_AIInfoReaction_TargetEliminated "{5969642049180529}" {
+     m_eType TARGET_ELIMINATED
+    }
+    SCR_AIInfoReaction_Wounded "{5969642049180512}" {
+     m_eType WOUNDED
+    }
+    SCR_AIInfoReaction_TargetLost "{5969642049180511}" {
+     m_eType TARGET_LOST
+    }
+    SCR_AIInfoReaction_NoAmmo "{5969642049180518}" {
+     m_eType NO_AMMO
+    }
+   }
+  }
+  SCR_AIGroupInfoComponent "{5969642049180505}" {
+  }
+  SCR_AIGroupUtilityComponent "{5969642049180500}" {
+  }
+  SCR_CallsignGroupComponent "{596964204918050E}" {
+  }
+  SCR_EditableGroupComponent "{59696420491806CD}" {
+   m_EntityType GROUP
+   m_UIInfo SCR_EditableGroupUIInfo "{5969642049180688}" {
+    Name "#AR-Group_Default"
+    m_aAuthoredLabels {
+     4
+    }
+    m_MilitarySymbol SCR_MilitarySymbol "{5969642049180569}" {
+    }
+   }
+   m_bAutoRegister ALWAYS
+   m_vIconPos 0 5 0
+   m_Flags 9541
+  }
+  SCR_GroupActivator "{596F44FE4EAE0062}" {
+   m_sTriggerName "ActivateTheGeneral"
+  }
+  SCR_GroupIdentityComponent "{5969642049180635}" {
+   m_MilitarySymbol SCR_MilitarySymbol "{5969642049180634}" {
+   }
+  }
+  SCR_MailboxComponent "{5969642049180631}" {
+  }
+  RplComponent "{596964204918063B}" {
+   Streamable Disabled
+  }
+ }
+ coords 11512.521 0 2226.061
+ angleY -90
+ DangerEventRange 200
+ m_faction "USSR"
+ m_aUnitPrefabSlots {
+  "{C85A4F8C8131AC10}Prefabs/Characters/General_Makarov.et" "{96C784C502AC37DA}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_MG.et"
+ }
+ m_aStaticWaypoints {
+  "GeneralCycle"
+ }
+ m_bSpawnImmediately 0
+}
+SCR_AIGroup RidgelineSquad : "{1A5F0D93609DA5DA}Prefabs/Groups/OPFOR/Group_USSR_ManeuverGroup.et" {
+ coords 11363.185 69.629 1848.543
+ angleY -170.382
+ m_aUnitPrefabSlots + {
+  "{E9AEEF2D9E41321B}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_AMG.et"
+ }
+ m_aStaticWaypoints {
+  "RidgelinePost"
+ }
+}
+SCR_AIGroup : "{30ED11AA4F0D41E5}Prefabs/Groups/OPFOR/Group_USSR_FireGroup.et" {
+ coords 11616.02 0.682 2218.953
+ m_aStaticWaypoints {
+  "PatrolTown"
+ }
+}
+$grp AIWaypointCycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ PatrolTown {
+  coords 11678.531 8.42 2235.674
+  CycleWaypoints {
+   "PatrolTown_1" "PatrolTown_2" "PatrolTown_3"
+  }
+  {
+   $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+    PatrolTown_1 {
+     coords 14.498 0.397 40.221
+     CompletionRadius 30
+    }
+    PatrolTown_2 {
+     coords -7.17 2.52 -37.178
+     CompletionRadius 15
+    }
+    PatrolTown_3 {
+     coords -34.248 -5.969 -9.325
+     CompletionRadius 25
+    }
+   }
+  }
+ }
+ GeneralCycle {
+  coords 11524.812 1.503 2220.352
+  CycleWaypoints {
+   "GeneralCycle1" "GeneralCycle2" "GeneralCycle3" "GeneralCycle4"
+  }
+  {
+   $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+    GeneralCycle1 {
+     coords -129.366 -0.032 41.692
+    }
+    GeneralCycle2 {
+     coords 2.638 -1.503 15.198
+    }
+    GeneralCycle3 {
+     coords 67.012 0.038 -5.969
+    }
+    GeneralCycle4 {
+     coords -52.209 -0.934 4.748
+    }
+   }
+  }
+ }
+}
+SCR_DefendWaypoint MG_Nest : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ coords 11614.014 9.484 2148.364
+ CompletionRadius 10
+ m_DefendPresets {
+  SCR_DefendWaypointPreset "{58D6884489389713}" {
+   m_bUseCoverPosts 1
+  }
+  SCR_DefendWaypointPreset "{58D688448899BCA0}" {
+   m_bUseObservationPosts 1
+   m_bUseGatePosts 1
+  }
+ }
+}
+SCR_TimedWaypoint RidgelinePost : "{A88F0B6CF25BD1DE}Prefabs/AI/Waypoints/AIWaypoint_Scout.et" {
+ coords 11363.412 69.895 1851.594
+ CompletionRadius 5
+}
+$grp SCR_AIGroup : "{CB58D90EA14430AD}Prefabs/Groups/OPFOR/Group_USSR_SentryTeam.et" {
+ MG_Nest_Team {
+  coords 11615.522 8.96 2153.879
+  m_aStaticWaypoints {
+   "MG_Nest"
+  }
+ }
+ {
+  coords 11641.405 0.966 2289.818
+  angleY -76.53
+  m_aStaticWaypoints {
+   "PatrolTown"
+  }
+ }
+}
+SCR_AIGroup : "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et" {
+ coords 11694.747 8.063 2262.996
+ m_aStaticWaypoints {
+  "PatrolTown"
+ }
+}

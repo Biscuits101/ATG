@@ -1,0 +1,347 @@
+SCR_BaseGameMode GameMode {
+ components {
+  SCR_CallsignManagerComponent "{5969632DF13EF8E1}" {
+  }
+  SCR_DestructionManagerComponent "{5969632DF13EF8E9}" {
+  }
+  SCR_GameOverScreenManagerComponent "{5969632DF13E5402}" {
+   m_GameOverScreenConfig SCR_GameOverScreenConfig "{5969632DF13E5400}" {
+    m_aGameOverScreens {
+     SCR_BaseGameOverScreenInfo "{5969632DF13EF816}" {
+      m_GameOverScreenId NEUTRAL
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EF828}" {
+       m_sTitle "#AR-MatchResult_Default-UC"
+       m_sImageTexture "{BD2E2F871E6A3EBF}UI/Textures/Flags/Flag_Faction_Base.edds"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_FactionGameOverScreenInfo "{5969632DF13EF80F}" {
+      m_GameOverScreenId FACTION_NEUTRAL
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EF801}" {
+       m_sTitle "#AR-MatchResult_Default-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_FactionNeutral_Subtitle"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_FactionVictoryGameOverScreenInfo "{5969632DF13EF87E}" {
+      m_GameOverScreenId FACTION_VICTORY_SCORE
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EF871}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-Campaign_MatchResult_VictoryDetail_Score"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_FactionGameOverScreenInfo "{5969632DF13EF865}" {
+      m_GameOverScreenId FACTION_DEFEAT_SCORE
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EF867}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_DefeatDetail_Score"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_FactionVictoryGameOverScreenInfo "{5969632DF13EF851}" {
+      m_GameOverScreenId FACTION_VICTORY_TIME
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EF853}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-Campaign_MatchResult_VictoryDetail_Time"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_FactionGameOverScreenInfo "{5969632DF13EF847}" {
+      m_GameOverScreenId FACTION_DEFEAT_TIME
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EF846}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-Campaign_MatchResult_DefeatDetail_Time"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{5969632DF13EF848}" {
+      m_GameOverScreenId FACTION_DRAW
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EF84D}" {
+       m_sTitle "#AR-MatchResult_Draw-UC"
+       m_sSubtitle "#AR-MatchResult_Draw"
+       m_sDebriefing "#AR-Campaign_MatchResult_DrawDetail"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_DeathMatchGameOverScreenInfo "{5969632DF13EF9BA}" {
+      m_GameOverScreenId DEATHMATCH_VICTORY_SCORE
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EF9BC}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sImageTexture "{0B03F611D52043AE}UI/Textures/placeholder.edds"
+       m_sDebriefing "#AR-MatchResult_DM_Score_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_DeathMatchGameOverScreenInfo "{5969632DF13EF9AE}" {
+      m_GameOverScreenId DEATHMATCH_DEFEAT_SCORE
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EF9A1}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sImageTexture "{3E294459ED6AAF48}UI/Textures/EditorPreviews/Auto/Editor/PlaceholderObjects/E_Placeholder_BasicDoubleSign_01.edds"
+       m_sDebriefing "#AR-MatchResult_DM_Score_Debrief"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_DeathMatchGameOverScreenInfo "{5969632DF13EFBC3}" {
+      m_GameOverScreenId DEATHMATCH_VICTORY_TIME
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EF99F}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sImageTexture "{3E294459ED6AAF48}UI/Textures/EditorPreviews/Auto/Editor/PlaceholderObjects/E_Placeholder_BasicDoubleSign_01.edds"
+       m_sDebriefing "#AR-MatchResult_DM_Time_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_DeathMatchGameOverScreenInfo "{5969632DF13EFBD9}" {
+      m_GameOverScreenId DEATHMATCH_DEFEAT_TIME
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EFBD8}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sImageTexture "{3E294459ED6AAF48}UI/Textures/EditorPreviews/Auto/Editor/PlaceholderObjects/E_Placeholder_BasicDoubleSign_01.edds"
+       m_sDebriefing "loc DM debrief"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{5969632DF13EFBA4}" {
+      m_GameOverScreenId EDITOR_NEUTRAL
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EFBAE}" {
+       m_sTitle "#AR-MatchResult_EditorSessionEnd-UC"
+       m_sSubtitle "#AR-MatchResult_EditorNeutral_Subtitle"
+       m_sImageTexture "{45BF8792AAF74C6E}UI/Textures/Editor/Logos/Logo_Editor_GameOver.edds"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{5969632DF13EFBA7}" {
+       m_sDisplayName "#AR-Editor_GameOverAttribute_Neutral_Name"
+       m_sDescription "#AR-Editor_GameOverAttribute_Neutral_Description"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{5969632DF13EFBB6}" {
+      m_GameOverScreenId SERVER_RESTART
+      m_GameOverContentLayout "{C4507D07F3C54831}UI/layouts/HUD/GameOver/EndScreen/EndScreen_NoImage.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EFBBC}" {
+       m_sTitle "#AR-ServerRestart_Title-UC"
+       m_sSubtitle "#AR-ServerRestart_Description"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{5969632DF13EFBB1}" {
+       m_sDisplayName "#AR-Editor_GameOverAttribute_RestartServer_Name"
+       m_sDescription "#AR-Editor_GameOverAttribute_RestartServer_Description"
+      }
+     }
+     SCR_FactionGameOverScreenInfo "{5969632DF13EFB83}" {
+      m_GameOverScreenId EDITOR_FACTION_NEUTRAL
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EFB8F}" {
+       m_sTitle "#AR-MatchResult_EditorSessionEnd-UC"
+       m_sSubtitle "#AR-MatchResult_FactionNeutral_Subtitle"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{5969632DF13EFB82}" {
+       m_bCanBeSetByGameMaster 0
+      }
+     }
+     SCR_FactionVictoryGameOverScreenInfo "{5969632DF13E54E5}" {
+      m_GameOverScreenId EDITOR_FACTION_VICTORY
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EFB9B}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{5969632DF13EFB92}" {
+       m_bNeedsPlayableFactions 1
+       m_sDisplayName "#AR-Editor_GameOverAttribute_FactionVictory_Name"
+       m_sDescription "#AR-Editor_GameOverAttribute_FactionVictory_Description"
+       m_MirroredState EDITOR_FACTION_DEFEAT
+      }
+     }
+     SCR_EditorFactionGameOverScreenInfo "{5969632DF13E5415}" {
+      m_GameOverScreenId EDITOR_FACTION_DEFEAT
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13E541E}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{5969632DF13E541B}" {
+       m_bCanBeSetByGameMaster 0
+       m_MirroredState EDITOR_FACTION_VICTORY
+      }
+      m_sMultiFactionsSubtiteText "#AR-MatchResult_MultiFactions"
+     }
+     SCR_FactionGameOverScreenInfo "{5969632DF13E5401}" {
+      m_GameOverScreenId EDITOR_FACTION_DRAW
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13E540F}" {
+       m_sTitle "#AR-MatchResult_Draw-UC"
+       m_sSubtitle "#AR-MatchResult_Draw"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{5969632DF13E5406}" {
+       m_bNeedsPlayableFactions 1
+       m_sDisplayName "#AR-Editor_GameOverAttribute_FactionDraw_Name"
+       m_sDescription "#AR-Editor_GameOverAttribute_FactionDraw_Description"
+      }
+      m_bGetWinningFactionImage 0
+      m_bGetWinningSubtitleParam 0
+     }
+    }
+   }
+  }
+  SCR_GroupsManagerComponent "{5969632DF13E5438}" {
+   m_sDefaultGroupPrefab "{8B4D49A9F324E7D5}Prefabs/Groups/PlayableGroup.et"
+   m_iPlayableGroupFrequencyOffset 500
+  }
+  SCR_HintManagerComponent "{5969632DF13E5437}" {
+  }
+  SCR_NametagConfigComponent "{5969632DF13E5431}" {
+  }
+  SCR_NotificationSenderComponent "{5969632DF13E5432}" {
+  }
+  SCR_PlayerProfileManagerComponent "{5969632DF13E542F}" {
+  }
+  SCR_PlayersRestrictionZoneManagerComponent "{5969632DF13E5429}" {
+  }
+  SCR_PossessingManagerComponent "{5969632DF13E5425}" {
+  }
+  SCR_RespawnBriefingComponent "{5969632DF13E547F}" {
+   m_Info SCR_UIInfo "{5969632DF13E5456}" {
+    Description "You have been tasked with sneaking onto the island and taking out General Makarov. It's rumored he likes to take early morning walks on the beach."
+   }
+   m_SimpleBriefingBackground ""
+   m_aGameModeHints {
+    SCR_UIInfo "{5969632DF13E5449}" {
+     Name "Insertion"
+     Description "You will enter under the cover of darkness via a small boat."
+     Icon "{3C50D67D082BA322}UI/Textures/DeployMenu/Briefing/conflict_HintBanner_2_UI.edds"
+    }
+    SCR_UIInfo "{5969632DF13E5445}" {
+     Name "Climbing"
+     Description "Move up the ridgeline to find a suitable shooting position."
+     Icon "{39A515BAE3795994}UI/Textures/DeployMenu/Briefing/conflict_HintBanner_3_UI.edds"
+    }
+    SCR_UIInfo "{5969632DF13E547C}" {
+     Name "Take the shot and run"
+     Description "Once you have ID'd and taken out the General you will need to quickly head for extraction.  A nearby river will guide you back to the coastline."
+     Icon "{324E923535DCACF8}UI/Textures/DeployMenu/Briefing/conflict_HintBanner_1_UI.edds"
+    }
+   }
+  }
+  SCR_RespawnMenuHandlerComponent "{5969632DF13E5476}" {
+   m_bAllowFactionChange 0
+   m_bAllowQuickDeploy 0
+  }
+  SCR_RespawnSystemComponent "{5969632DF13E5473}" {
+  }
+  SCR_RespawnTimerComponent "{5969632DF13E546E}" {
+   m_fRespawnTime 1
+  }
+  SCR_SaveLoadComponent "{5969632DF13E5468}" {
+  }
+  SCR_VotingManagerComponent "{5969632DF13E34EC}" {
+   m_aVotingTemplates {
+    SCR_VotingKick "{5969632DF13E5794}" {
+     m_bIsValuePlayerID 1
+     m_Info SCR_VotingUIInfo "{5969632DF13E5795}" {
+      Name "#AR-Voting_KICK_AddVoteName"
+      m_sStartVotingName "#AR-Voting_KICK_StartVotingName"
+      m_sStickyNotificationText "#AR-Notification_Sticky_VoteKickPlayer"
+      m_iStartNotificationId VOTING_KICK_START
+      m_iSucceededNotificationId VOTING_KICK_SUCCEED
+      m_iFailedNotificationId VOTING_KICK_FAIL
+     }
+    }
+    SCR_VotingKick "{5969632DF13E578F}" {
+     m_Info SCR_VotingUIInfo "{5969632DF13E578C}" {
+      m_iStartNotificationId VOTING_KICK_START
+      m_iSucceededNotificationId VOTING_KICK_SUCCEED
+      m_iFailedNotificationId VOTING_KICK_FAIL
+     }
+    }
+   }
+  }
+  RplComponent "{5969632DF13E34E0}" {
+   "Rpl State Override" Static
+   Streamable Disabled
+  }
+ }
+ coords 11861.891 1.271 1282.464
+ Flags 0
+ m_bAutoDisabledControls 0
+}
+SCR_FactionManager FactionManager : "{589540B35EBA8CDC}Prefabs/MP/Managers/Factions/FactionManager_USxUSSR.et" {
+ coords 11861.297 0.812 1288.885
+ Factions {
+  SCR_Faction "{56B2B46E9AF80999}" {
+   m_bIsPlayable 0
+  }
+ }
+}
+SCR_LoadoutManager LoadoutManager {
+ coords 11867.605 0.888 1287.398
+ Flags 0
+ m_aPlayerLoadouts {
+  SCR_FactionPlayerLoadout "{5969632DA6FC506E}" {
+   m_sLoadoutName "J Nichol"
+   m_sLoadoutResource "{EE685F1C1165D441}Prefabs/Characters/Nichol.et"
+   m_sLoadoutImage "{13AC78F098028758}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Sniper.edds"
+   m_sAffiliatedFaction "US"
+  }
+  SCR_FactionPlayerLoadout "{5969632DA6FC5063}" {
+   m_sLoadoutName "J Peters"
+   m_sLoadoutResource "{A4EDDE1BE44A1342}Prefabs/Characters/Peters.et"
+   m_sLoadoutImage "{0F7FF26A2EA503A0}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Spotter.edds"
+   m_sAffiliatedFaction "US"
+  }
+ }
+}
+SCR_SpawnPoint PlayerSpawn {
+ components {
+  Hierarchy "{5969632D98B4416B}" {
+  }
+  SCR_FactionControlComponent "{5969632D98B44161}" {
+   m_DefaultFaction "US"
+  }
+  SCR_MapDescriptorComponent "{5969632D98B4411A}" {
+   VisibleOnMap 1
+   MainType Spawnpoint
+  }
+  RplComponent "{5969632D98B44115}" {
+   "Self Insert" 0
+   Streamable Disabled
+  }
+ }
+ coords 11807.389 3.798 1370.419
+ m_fSpawnRadius 0.75
+ m_fNoPlayerRadius 0
+ m_fNoSightRadius 0
+ m_sFaction "US"
+ m_Info SCR_UIInfo "{5969632D98B44ED8}" {
+  Name "Insertion Point"
+  Description "Insert onto the island under the cover of darkness."
+  Icon "{46FB2FB2C2125A3C}UI/Textures/Flags/US-flag-base-3it.edds"
+ }
+}

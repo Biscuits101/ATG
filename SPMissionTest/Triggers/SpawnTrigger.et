@@ -1,0 +1,14 @@
+SCR_BaseFactionTriggerEntity : "{B5457D8FC13F279D}Triggers/FactionSphereTrigger.et" {
+ ID "596B3AAB9ECD824C"
+ components {
+  Hierarchy "{596CD61C5157A90D}" {
+  }
+  SCR_TriggerSpawner "{596CD61C55B33304}" {
+  }
+  RplComponent "{596CD61C53218FC6}" {
+  }
+ }
+ coords 0 0 0
+ ShapeColor 0.259 0.365 0.686 1
+ TriggerActivationType "All changes"
+}

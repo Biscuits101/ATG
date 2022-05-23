@@ -1,0 +1,43 @@
+$grp SCR_BaseTriggerEntity : "{0DBC0F322440BEA9}Triggers/SphereTrigger.et" {
+ ActivateTheGeneral {
+  coords 11195.507 130.486 2063.13
+  SphereRadius 100
+  DrawShape 0
+  ShapeColor 1 0 0 0.392
+  ClassFilter "ChimeraCharacter"
+ }
+ QRF_Trigger {
+  coords 11131.058 25.929 1813.215
+  SphereRadius 150
+  DrawShape 0
+  ShapeColor 1 0 0 0.392
+  ClassFilter "ChimeraCharacter"
+ }
+}
+$grp SCR_BaseFactionTriggerEntity : "{3272CFA5C0379F17}Prefabs/Checkpoint.et" {
+ Checkpoint_1 {
+  components {
+   SCR_TriggerSpawner "{596CEDD76D8D46D8}" {
+    m_sTriggerMessage "CHECKPOINT!"
+   }
+  }
+  coords 11400.455 60.855 1712.204
+  TriggerShapeType Sphere
+  SphereRadius 150
+  ShapeColor 0.259 0.365 0.686 1
+  TriggerActivationType "All changes"
+  PeriodicQueries 1
+  UpdatePeriod 0.1
+  ClassFilter "ChimeraCharacter"
+  m_sOwnerFactionKey "US"
+ }
+ Checkpoint_2 {
+  components {
+   SCR_TriggerSpawner "{596CEDD76D8D46D8}" {
+    m_sTriggerMessage "CHECKPOINT!"
+   }
+  }
+  coords 11193.564 139.076 2049.998
+  SphereRadius 95
+ }
+}

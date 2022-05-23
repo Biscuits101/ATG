@@ -1,0 +1,7 @@
+SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ ID "50EECB8790B5A515"
+ coords -22.638 -1.037 12.712
+ AIBehaviorTreeMoveTo "{62D36413D46F02A6}AI/BehaviorTrees/Waypoints/WP_Patrol.bt"
+ CompletionRadius 5
+ Autocomplete 1
+}

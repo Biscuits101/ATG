@@ -1,0 +1,56 @@
+SCR_ChimeraCharacter : "{7A9EE19AB67B298B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_base.et" {
+ ID "520EC961A090B1EE"
+ components {
+  CharacterWeaponSlotComponent "{520EA1D2F659CFDC}" {
+   WeaponTemplate "{C0F7DD85A86B2900}Prefabs/Weapons/Handguns/PM/Handgun_PM.et"
+  }
+  FactionAffiliationComponent "{555C98D1CD949F3E}" {
+   "faction affiliation" "USSR"
+  }
+  SCR_CharacterRankComponent "{528E6D4286AA2D8F}" {
+   m_iRank COLONEL
+  }
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "#AR-Role_Unarmed"
+    Icon "{9164E45B9A237FE9}UI/Textures/Editor/EditableEntities/Characters/EditableEntity_Character_Unarmed.edds"
+    IconSetName ""
+    m_Image "{0F62C575785D87CD}UI/Textures/EditorPreviews/Characters/INDFOR/FIA/Character_FIA_Unarmed.edds"
+    m_sFaction "FIA"
+    m_aAuthoredLabels + {
+     22
+    }
+    m_aAutoLabels {
+     122
+    }
+   }
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Vest {
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{566C8D26AC156C09}" {
+     PrefabsToSpawn +{
+     }
+    }
+    ItemsInitConfigurationItem "{59696427E10EB333}" {
+     TargetStorage "Prefabs/Characters/Uniforms/Jacket_M70.et"
+     TargetPurpose 64
+     PrefabsToSpawn {
+      "{575EA58E67448C2A}Prefabs/Items/Equipment/Flashlights/Flashlight_Soviet_01.et"
+     }
+    }
+    ItemsInitConfigurationItem "{59696426D939650C}" {
+     TargetStorage "Prefabs/Characters/Uniforms/Jacket_M70.et"
+     PrefabsToSpawn {
+      "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et" "{8B853CDD11BA916E}Prefabs/Weapons/Magazines/Magazine_9x18_PM_8rnd_Ball.et"
+     }
+    }
+   }
+  }
+ }
+}

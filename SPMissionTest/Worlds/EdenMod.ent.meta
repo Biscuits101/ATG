@@ -1,0 +1,15 @@
+MetaFileClass {
+ Name "{0D7D145F75DF47F2}Worlds/EdenMod.ent"
+ Configurations {
+  ENTResourceClass PC {
+  }
+  ENTResourceClass XBOX_ONE : PC {
+  }
+  ENTResourceClass XBOX_SERIES : PC {
+  }
+  ENTResourceClass PS4 : PC {
+  }
+  ENTResourceClass HEADLESS : PC {
+  }
+ }
+}

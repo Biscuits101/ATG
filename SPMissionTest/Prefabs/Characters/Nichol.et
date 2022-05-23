@@ -1,0 +1,96 @@
+SCR_ChimeraCharacter : "{836E7E39AAC5888B}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Base.et" {
+ ID "520EC961A090BBD5"
+ components {
+  SCR_CharacterInventoryStorageComponent "{520EA1D2DB118DAC}" {
+   components {
+    SCR_EquipmentStorageComponent "{56B49DA9722B635D}" {
+     InitialStorageSlots {
+      SCR_EquipmentStorageSlot BinocularSlot {
+       Prefab "{0CF54B9A85D8E0D4}Prefabs/Items/Equipment/Binoculars/Binoculars_M22.et"
+      }
+     }
+    }
+   }
+  }
+  BaseWeaponManagerComponent "{520EA1D2F659CE5D}" {
+   DefaultWeaponIndex 0
+  }
+  CharacterGrenadeSlotComponent "{520EA1D2F659CE6E}" {
+   WeaponTemplate "{9DB69176CEF0EE97}Prefabs/Weapons/Grenades/Smoke_ANM8HC.et"
+  }
+  CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
+   WeaponTemplate "{81EB948E6414BD6F}Prefabs/Weapons/Rifles/M14/Rifle_M21_ARTII.et"
+  }
+  CharacterWeaponSlotComponent "{520EA1D2F659CFB7}" {
+   WeaponTemplate "{5A987A8A13763769}Prefabs/Weapons/Rifles/M16/Rifle_M16A2_M203.et"
+  }
+  CharacterWeaponSlotComponent "{520EA1D2F659CFDC}" {
+  }
+  SCR_EditableCharacterComponent "{520EA1D2F659C85C}" {
+   m_UIInfo SCR_EditableEntityUIInfo "{5298E609432D192D}" {
+    Name "#AR-Role_Sniper"
+    Icon "{0A78405E73C36477}UI/Textures/Editor/EditableEntities/Characters/EditableEntity_Character_Sharpshooter.edds"
+    IconSetName ""
+    m_Image "{13AC78F098028758}UI/Textures/EditorPreviews/Characters/BLUFOR/US_Army/Character_US_Sniper.edds"
+    m_sFaction "US"
+    m_aAuthoredLabels + {
+     33
+    }
+    m_aAutoLabels {
+     122 47
+    }
+   }
+  }
+  SCR_GadgetManagerComponent "{520EA1D2DB118DF3}" {
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{D4BC1F7EC5C290A3}Prefabs/Characters/HeadGear/Hat_Boonie_US_01/Hat_Boonie_US_01_base.et"
+    }
+    LoadoutSlotInfo Back {
+     Prefab ""
+    }
+    LoadoutSlotInfo Vest {
+     Prefab "{9CEA24A1A9CC2675}Prefabs/Characters/Vests/Vest_ALICE/Variants/Vest_ALICE_sniper.et"
+    }
+    LoadoutSlotInfo Boots {
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{59694461922DF91B}" {
+     TargetStorage "Prefabs/Characters/Uniforms/Pants_US_BDU.et"
+     PrefabsToSpawn {
+      "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_US_01.et"
+     }
+    }
+    ItemsInitConfigurationItem "{54A49B42D138207E}" {
+     TargetStorage "Prefabs/Items/Equipment/Accessories/Pouch_ALICE_20rnd_M14/Pouch_ALICE_20rnd_M14.et"
+     PrefabsToSpawn {
+      "{627255315038152A}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_SpecialBall.et" "{627255315038152A}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_SpecialBall.et" "{D8F2CA92583B23D3}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_Last_5Tracer.et" "{D8F2CA92583B23D3}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_Last_5Tracer.et"
+     }
+    }
+    ItemsInitConfigurationItem "{59694461922DF915}" {
+     TargetStorage "Prefabs/Characters/Vests/Vest_ALICE/Vest_ALICE_buttpack.et"
+     PrefabsToSpawn {
+      "{9DB69176CEF0EE97}Prefabs/Weapons/Grenades/Smoke_ANM8HC.et" "{5375FA7CB1F68573}Prefabs/Weapons/Ammo/Ammo_Grenade_HE_M406.et" "{5375FA7CB1F68573}Prefabs/Weapons/Ammo/Ammo_Grenade_HE_M406.et" "{627255315038152A}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_SpecialBall.et" "{627255315038152A}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_SpecialBall.et" "{D8F2CA92583B23D3}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_Last_5Tracer.et"
+     }
+    }
+    ItemsInitConfigurationItem "{56607B916E51CA58}" {
+     PrefabsToSpawn {
+      "{61D4F80E49BF9B12}Prefabs/Items/Equipment/Compass/Compass_SY183.et" "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/PaperMap_01_folded.et" "{73950FBA2D7DB5C5}Prefabs/Items/Equipment/Radios/Radio_ANPRC68.et"
+     }
+    }
+    ItemsInitConfigurationItem "{59694461922DF912}" {
+     TargetStorage "Prefabs/Characters/Vests/Vest_ALICE/Vest_ALICE_suspenders_2.et"
+     TargetPurpose 64
+     PrefabsToSpawn {
+      "{3A421547BC29F679}Prefabs/Items/Equipment/Flashlights/Flashlight_MX991.et"
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,23 @@
+SCR_BaseFactionTriggerEntity {
+ ID "596CEDD776CDF582"
+ components {
+  Hierarchy "{596CEDD76D8D46E4}" {
+  }
+  SCR_TriggerSpawner "{596CEDD76D8D46D8}" {
+   m_rnSpawnPrefab "{D218D08CD43B3A41}Prefabs/PlayerCheckpoint.et"
+   m_sTriggerMessage "CHECKPOINT!"
+  }
+  RplComponent "{596CEDD76D8D46C2}" {
+  }
+ }
+ coords 11407.664 59.392 1702.818
+ TriggerShapeType Sphere
+ SphereRadius 150
+ DrawShape 0
+ ShapeColor 0.259 0.365 0.686 1
+ TriggerActivationType "All changes"
+ PeriodicQueries 1
+ UpdatePeriod 0.1
+ ClassFilter "ChimeraCharacter"
+ m_sOwnerFactionKey "US"
+}

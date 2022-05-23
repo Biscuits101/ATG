@@ -1,0 +1,11 @@
+SCR_BaseFactionTriggerEntity {
+ ID "596B3AAB9ECD824C"
+ TriggerShapeType Sphere
+ SphereRadius 20
+ DrawShape 1
+ ShapeColor 1 0 0 0.392
+ PeriodicQueries 1
+ UpdatePeriod 0.1
+ ClassFilter "ChimeraCharacter"
+ m_sOwnerFactionKey "US"
+}

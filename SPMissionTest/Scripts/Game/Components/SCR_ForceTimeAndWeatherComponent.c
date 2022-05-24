@@ -110,6 +110,4 @@ class SCR_ForceTimeAndWeatherComponent : SCR_BaseGameModeComponent
 
 		weatherManager.SetTimeOfTheDay(timeOfTheDay, true);
 	}
-
-
 }

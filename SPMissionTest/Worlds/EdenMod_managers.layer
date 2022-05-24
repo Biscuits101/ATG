@@ -25,6 +25,7 @@ SCR_CameraManager SCR_CameraManager1 : "{33F9FD881E3700CC}Prefabs/World/Game/SCR
 }
 TimeAndWeatherManagerEntity : "{A3BAF78F6F03315B}Prefabs/World/Game/TimeAndWeatherManager.et" {
  coords 11876.334 1.753 1289.933
+ Flags 2097155
  WeatherStateMachine "{9712737716C8AA04}Terrains/Common/WeatherPresets/StateMachine/WeatherStatesCustomized.conf"
  "Initial Day Time" 6.25
  "Internal variant transition" 0

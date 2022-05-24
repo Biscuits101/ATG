@@ -4,6 +4,12 @@ SCR_BaseGameMode GameMode {
   }
   SCR_DestructionManagerComponent "{5969632DF13EF8E9}" {
   }
+  SCR_ForceTimeAndWeatherComponent "{5970D8BE9B8F9296}" {
+   m_bUseCustomWeather 1
+   m_sCustomWeatherId "Cloudy"
+   m_bUseCustomTime 1
+   m_fCustomTimeOfTheDay 6
+  }
   SCR_GameOverScreenManagerComponent "{5969632DF13E5402}" {
    m_GameOverScreenConfig SCR_GameOverScreenConfig "{5969632DF13E5400}" {
     m_aGameOverScreens {

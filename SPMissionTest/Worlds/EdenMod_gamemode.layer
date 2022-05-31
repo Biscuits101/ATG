@@ -1,14 +1,14 @@
 SCR_BaseGameMode GameMode {
  components {
-  SCR_CallsignManagerComponent "{5969632DF13EF8E1}" {
-  }
-  SCR_DestructionManagerComponent "{5969632DF13EF8E9}" {
-  }
-  SCR_ForceTimeAndWeatherComponent "{5970D8BE9B8F9296}" {
+  AGM_ForceTimeAndWeatherComponent "{597504A41AD7495D}" {
    m_bUseCustomWeather 1
    m_sCustomWeatherId "Cloudy"
    m_bUseCustomTime 1
    m_fCustomTimeOfTheDay 6
+  }
+  SCR_CallsignManagerComponent "{5969632DF13EF8E1}" {
+  }
+  SCR_DestructionManagerComponent "{5969632DF13EF8E9}" {
   }
   SCR_GameOverScreenManagerComponent "{5969632DF13E5402}" {
    m_GameOverScreenConfig SCR_GameOverScreenConfig "{5969632DF13E5400}" {
@@ -170,9 +170,9 @@ SCR_BaseGameMode GameMode {
       m_GameOverScreenId EDITOR_FACTION_VICTORY
       m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreen_Default.layout"
       m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5969632DF13EFB9B}" {
-       m_sTitle "#AR-MatchResult_Victory-UC"
-       m_sSubtitle "#AR-Campaign_MatchResult"
-       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sTitle "MISSION SUCCESS!"
+       m_sSubtitle "General Makarov Is Dead"
+       m_sDebriefing "Thanks for playing!"
        m_sAudioOneShot "SOUND_ONVICTORY"
       }
       m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{5969632DF13EFB92}" {
@@ -326,8 +326,6 @@ SCR_LoadoutManager LoadoutManager {
 }
 SCR_SpawnPoint PlayerSpawn {
  components {
-  Hierarchy "{5969632D98B4416B}" {
-  }
   SCR_FactionControlComponent "{5969632D98B44161}" {
    m_DefaultFaction "US"
   }
@@ -342,8 +340,8 @@ SCR_SpawnPoint PlayerSpawn {
  }
  coords 11807.389 3.795 1370.419
  angleY -61.139
- m_fSpawnRadius 0.75
- m_fNoPlayerRadius 0
+ m_fSpawnRadius 3
+ m_fNoPlayerRadius 2
  m_fNoSightRadius 0
  m_sFaction "US"
  m_Info SCR_UIInfo "{5969632D98B44ED8}" {

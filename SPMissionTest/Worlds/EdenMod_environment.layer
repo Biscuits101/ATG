@@ -1,3 +1,35 @@
+GenericEntity : "{4923E218F59644B9}Prefabs/Props/Wrecks/BoatWreck_01.et" {
+ coords 11187.647 4.102 1619.867
+ angleX 10.585
+ angleY -0.304
+ angleZ -1.653
+}
+Vehicle Jeep : "{86D830868F026D54}Prefabs/Vehicles/Wheeled/M151A2/M151A2_MERDC.et" {
+ components {
+  EventHandlerManagerComponent "{52CAB06F9C274D14}" {
+  }
+  FuelManagerComponent "{5622A70CD78A9E2C}" {
+   FuelNodes {
+    SCR_FuelNode "{5622A70CD4036C5A}" {
+     m_fInitialFuelTankState 0.07
+    }
+   }
+  }
+  SCR_VehicleDamageManagerComponent "{141326E9FD94FE40}" {
+   m_fVehicleDestroyDamage 10408.7
+  }
+ }
+ coords 11645.635 10.436 1423.837
+ angleX 3.623
+ angleY -65.35
+ angleZ 0.678
+}
+GenericEntity : "{C280B28ED4DF7AC5}Prefabs/Props/Military/Sandbags/Sandbag_01_single_base.et" {
+ coords 11187.865 5.22 1622.149
+ angleX 3.056
+ angleY -33.74
+ angleZ -85.436
+}
 GenericEntity : "{C3D9F6A8C253F878}Prefabs/Structures/Signs/Warnings/SignFallingRocks_01.et" {
  components {
   RigidBody "{54969A6AA8773997}" {

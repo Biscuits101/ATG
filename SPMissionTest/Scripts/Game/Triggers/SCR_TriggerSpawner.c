@@ -26,7 +26,6 @@ class SCR_TriggerSpawner : ScriptComponent
 		SetEventMask(owner, EntityEvent.INIT | EntityEvent.FRAME);
 	}
 
-	
 	// Inserts method call on parent trigger
 	override void EOnInit(IEntity owner)
 	{

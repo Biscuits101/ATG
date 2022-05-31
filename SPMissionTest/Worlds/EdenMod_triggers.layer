@@ -8,10 +8,33 @@ $grp SCR_BaseTriggerEntity : "{0DBC0F322440BEA9}Triggers/SphereTrigger.et" {
  }
  QRF_Trigger {
   coords 11131.058 25.929 1813.215
+  userScript "	override bool ScriptedEntityFilterForQuery(IEntity ent)"\
+  "	{"\
+  "		if (!DefaultEntityFilterForQuery(ent))"\
+  "			return false;"\
+  ""\
+  "		SCR_BaseTask killGeneralTask = SCR_BaseTask.Cast(GetGame().FindEntity(\"KillMakarov\"));"\
+  ""\
+  "		// Task exists = task incomplete"\
+  "		if (killGeneralTask)"\
+  "			return false;"\
+  "		else"\
+  "			return true;"\
+  "	}"
+  TriggerShapeType "Oriented Bounding Box"
   SphereRadius 150
+  BoxMins -350 -40 -130
+  BoxMaxs 300 130 200
+  BoxAngles 35.55 0 0
   DrawShape 0
   ShapeColor 1 0 0 0.392
+  TriggerActivationType "First change"
+  UpdatePeriod 1
   ClassFilter "ChimeraCharacter"
+  OnActivate ""\
+  "		super.OnActivate(ent);"\
+  "		SCR_PopUpNotification.GetInstance().PopupMsg(\"They have discovered your escape route, watch out for patrols!\");"\
+  "	"
  }
 }
 $grp SCR_BaseFactionTriggerEntity : "{3272CFA5C0379F17}Prefabs/Checkpoint.et" {

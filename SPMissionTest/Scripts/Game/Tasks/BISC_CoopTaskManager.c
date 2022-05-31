@@ -5,9 +5,6 @@ class BISC_CoopTaskManagerClass : SCR_BaseTaskManagerClass
 
 class BISC_CoopTaskManager : SCR_BaseTaskManager
 {
-	protected static const int SYNC_DELAY = 12000;
-
-
 	[Attribute("US", UIWidgets.EditBox, desc: "Faction to assign to tasks.", category: "Task Manager")]
 	protected FactionKey m_sCOOPFaction;
 
@@ -109,27 +106,20 @@ class BISC_CoopTaskManager : SCR_BaseTaskManager
 	////////////////////////////////////////////////////////////////
 	override void OnPlayerRegistered(int registeredPlayerID)
 	{
-		// Only call on clients, overwise the placed tasks dont synchronise properly
-		if (m_pRplComponent.IsProxy())
-			super.OnPlayerRegistered(registeredPlayerID);
+		super.OnPlayerRegistered(registeredPlayerID);
 
 		if (m_bVerbose)
 			Print(SCR_Enum.GetEnumName(RplRole, m_pRplComponent.Role()) + " : Player " + registeredPlayerID.ToString() + " registered!", LogLevel.NORMAL);
 
-		bool isPlayerInQuestion = GetGame().GetPlayerController().GetPlayerId() == registeredPlayerID;
-
 		// Authority only
 		if (m_pRplComponent.IsMaster())
-		{
-			if (isPlayerInQuestion)
-				TryAssignNextTask(registeredPlayerID);
-			else
-				GetGame().GetCallqueue().CallLater(TryAssignNextTask, SYNC_DELAY, false, registeredPlayerID);
-		}
+			TryAssignNextTask(registeredPlayerID);
+
+		bool isPlayerInQuestion = GetGame().GetPlayerController().GetPlayerId() == registeredPlayerID;
 
 		// If im the registering player, show my task HUD in a bit
 		if (isPlayerInQuestion)
-			GetGame().GetCallqueue().CallLater(ShowCurrentTask, SYNC_DELAY + 1500, false);
+			GetGame().GetCallqueue().CallLater(ShowCurrentTask, 3000, false);
 	}
 
 

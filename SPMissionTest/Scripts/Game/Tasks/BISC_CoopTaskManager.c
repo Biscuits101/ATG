@@ -135,8 +135,7 @@ class BISC_CoopTaskManager : SCR_BaseTaskManager
 				continue;
 
 			// Setting its faction for all players, not done till now for journal visibility
-			if (aTask.GetTargetFaction() != m_pTargetFaction)
-				super.SetTaskFaction(aTask, m_pTargetFaction);
+			super.SetTaskFaction(aTask, m_pTargetFaction);
 
 			// Specific player who just registered
 			if (joinInProgressId != -1)

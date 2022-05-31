@@ -7,7 +7,7 @@ Layer gamemode {
 Layer managers {
  Index 1
 }
-Layer tasks {
+Layer testing {
  Index 2
 }
 Layer triggers {

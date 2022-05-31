@@ -1,4 +1,4 @@
-SCR_BaseGameMode GameMode {
+SCR_BaseGameMode AGameMode {
  components {
   AGM_ForceTimeAndWeatherComponent "{597504A41AD7495D}" {
    m_bUseCustomWeather 1
@@ -306,6 +306,34 @@ SCR_FactionManager FactionManager : "{589540B35EBA8CDC}Prefabs/MP/Managers/Facti
   }
  }
 }
+BISC_CoopTaskManager ATaskManager {
+ components {
+  BISC_WaypointMarkerComponent "{597D2AB0A444AEDA}" {
+  }
+  SCR_TextsTaskManagerComponent "{597D2ABAE41C9134}" : "{6F59CB11B5383430}Prefabs/MP/Managers/Tasks/TaskManagerComponent.ct" {
+  }
+  SCR_UITaskManagerComponent "{597D2ABAE2DE4264}" {
+  }
+  RplComponent "{597D2ABAE13035A2}" {
+   Streamable Disabled
+  }
+ }
+ coords 11865.445 1.147 1287.135
+ m_aSupportedTaskTypes {
+  SCR_BaseTaskSupportClass "{597D2ABAFC4149C0}" {
+   m_TaskPrefab "{1D0F815858EE24AC}Prefabs/Tasks/BaseTask.et"
+  }
+  SCR_TriggerTaskSupportClass "{597D2ABAFF8404A3}" {
+   m_TaskPrefab "{830711F178046FA7}Prefabs/Tasks/BaseTriggerTask.et"
+  }
+  SCR_MoveTaskSupportClass "{597D2ABAF9406925}" {
+   m_TaskPrefab "{7259F0B101761BD5}Prefabs/Tasks/MoveTask.et"
+  }
+ }
+ m_aTaskEntityNames {
+  "MoveToIsland" "MoveToMountain" "KillMakarov" "MoveToExtraction"
+ }
+}
 SCR_LoadoutManager LoadoutManager {
  coords 11867.605 0.888 1287.398
  Flags 0
@@ -348,5 +376,159 @@ SCR_SpawnPoint PlayerSpawn {
   Name "Insertion Point"
   Description "Insert onto the island under the cover of darkness."
   Icon "{46FB2FB2C2125A3C}UI/Textures/Flags/US-flag-base-3it.edds"
+ }
+}
+SCR_TriggerTask KillMakarov {
+ components {
+  SCR_MapDescriptorComponent "{55D072570E7E8AB7}" {
+   DisplayName "Task"
+   VisibleOnMap 0
+   MainType Task
+  }
+ }
+ coords 11628.757 0.483 2216.585
+ m_sName "Locate and kill General Makarov"
+ m_sDescription "Rumor has it he likes to take walks on the beach."
+ m_sMapIconName "Icon_Task_Seize"
+ m_sTaskListIconName "Icon_Task_Seize"
+ m_bNotifyAssignment 1
+ m_bOnTriggerDeactivate 1
+ {
+  SCR_BaseFactionTriggerEntity MakarovDead : "{B5457D8FC13F279D}Triggers/FactionSphereTrigger.et" {
+   components {
+    Hierarchy "{596B3AA2CBB96CF3}" {
+    }
+   }
+   coords 0 0 0
+   userScript "	override bool ScriptedEntityFilterForQuery(IEntity ent)"\
+   "	{"\
+   "		SCR_ChimeraCharacter cc = SCR_ChimeraCharacter.Cast(ent);"\
+   "		if (!cc) return false; // If the entity is not a person, filter it out"\
+   "		if (cc.GetFactionKey() != \"USSR\") return false; // If the entity does not have the Faction key of USSR, filter it out"\
+   "		if (!IsAlive(cc)) return false; // If the entity is dead, filter it out"\
+   "		if (SCR_CharacterRankComponent.GetCharacterRank(cc) != ECharacterRank.COLONEL) return false; // if the entity is not a colonel, filter it out"\
+   "		return true; // Otherwise, include it!"\
+   "	}"
+   SphereRadius 500
+   DrawShape 0
+   TriggerActivationType "All changes"
+   m_sOwnerFactionKey "USSR"
+  }
+ }
+}
+$grp SCR_TriggerTask : "{7259F0B101761BD5}Prefabs/Tasks/MoveTask.et" {
+ MoveToExtraction {
+  components {
+   SCR_MapDescriptorComponent "{55D072570E7E8AB7}" {
+    VisibleOnMap 0
+    MainType Task
+   }
+  }
+  coords 11192.421 3.641 1613.342
+  m_sName "Get to the extraction point"
+  m_sDescription "Good job soldier, now get to the extraction point before all hell breaks loose!"
+  m_bNotifyAssignment 1
+  {
+   SCR_BaseFactionTriggerEntity Extract {
+    ID "55D072570E7E8ABF"
+    coords 0.098 -0.436 1.286
+    userScript "	override bool ScriptedEntityFilterForQuery(IEntity ent)"\
+    "	{"\
+    "		SCR_ChimeraCharacter cc = SCR_ChimeraCharacter.Cast(ent);"\
+    "		if (!cc) return false; // If the entity is not a person, filter it out"\
+    "		if (cc.GetFactionKey() != \"US\") return false; // If the entity does not have the Faction key of US, filter it out"\
+    "		if (!IsAlive(cc)) return false; // If the entity is dead, filter it out"\
+    "		"\
+    "		return IsGeneralMakarovDead();"\
+    "	}"\
+    "	"\
+    "	protected bool IsGeneralMakarovDead()"\
+    "	{"\
+    "		// Find the generals group entity"\
+    "		SCR_AIGroup generalsGroup = SCR_AIGroup.Cast(GetGame().FindEntity(\"TheGeneralGroup\"));"\
+    "		"\
+    "		// No group, members have been killed and the group self deleted?"\
+    "		if (!generalsGroup)"\
+    "			return true;"\
+    ""\
+    "		array<AIAgent> groupAgents = {};"\
+    "		generalsGroup.GetAgents(groupAgents);"\
+    ""\
+    "		// Has group even spawned agents yet?"\
+    "		if (groupAgents.Count() == 1)"\
+    "		{"\
+    "			foreach (AIAgent agent : groupAgents)"\
+    "			{"\
+    "				IEntity agentEntity = agent.GetControlledEntity();"\
+    "				SCR_ChimeraCharacter cc = SCR_ChimeraCharacter.Cast(agentEntity);"\
+    "				"\
+    "				// If there is only one unit left in the group and he is a private"\
+    "				// Had issues getting the rank of a dead person"\
+    "				if (SCR_CharacterRankComponent.GetCharacterRank(cc) == ECharacterRank.PRIVATE)"\
+    "					return true;"\
+    "			}"\
+    "		}"\
+    "		"\
+    "		// General Makarov is either still alive or unspawned so mission must not be completed"\
+    "		return false;"\
+    "	}"
+    SphereRadius 20
+    ShapeColor 1 0 0 0.392
+    UpdatePeriod 0.5
+    OnActivate ""\
+    "		SCR_BaseGameMode gameMode = SCR_BaseGameMode.Cast(GetGame().GetGameMode()); // Get the game mode for the end script"\
+    "		Faction faction = GetGame().GetFactionManager().GetFactionByKey(\"US\"); // Get the winning faction Key"\
+    "		int factionIndex = GetGame().GetFactionManager().GetFactionIndex(faction); // Get the winning faction key's index"\
+    "		gameMode.EndGameMode(SCR_GameModeEndData.CreateSimple(SCR_GameModeEndData.ENDREASON_EDITOR_FACTION_VICTORY, -1, factionIndex));"\
+    "	"
+    m_sOwnerFactionKey "US"
+   }
+  }
+ }
+ MoveToMountain {
+  components {
+   SCR_MapDescriptorComponent "{55D072570E7E8AB7}" {
+    DisplayName ""
+    VisibleOnMap 0
+    MainType Task
+   }
+  }
+  coords 11195.507 130.486 2063.13
+  m_sName "Climb the mountain"
+  m_sDescription "Move up the mountain and find a suitable shooting Spot"
+  m_bNotifyAssignment 1
+  {
+   SCR_BaseFactionTriggerEntity {
+    ID "55D072570E7E8ABF"
+    SphereRadius 10
+    ShapeColor 1 0 0 0.392
+    m_sOwnerFactionKey "US"
+   }
+  }
+ }
+ MoveToIsland {
+  components {
+   SCR_MapDescriptorComponent "{55D072570E7E8AB7}" {
+    VisibleOnMap 0
+    MainType Task
+   }
+  }
+  coords 11726.132 2.804 1416.448
+  m_sName "Cross the broken bridge"
+  m_sDescription "Get onto the main land after insertion"
+  m_bNotifyAssignment 1
+  {
+   SCR_BaseFactionTriggerEntity {
+    ID "55D072570E7E8ABF"
+    components {
+     Hierarchy "{55D072570E7E8ADA}" {
+     }
+    }
+    SphereRadius 20
+    ShapeColor 1 0 0 0.392
+    UpdatePeriod 1
+    m_sOwnerFactionKey "US"
+   }
+  }
  }
 }

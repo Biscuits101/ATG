@@ -10,8 +10,10 @@ $grp SCR_BaseTriggerEntity : "{0DBC0F322440BEA9}Triggers/SphereTrigger.et" {
   coords 11131.058 25.929 1813.215
   userScript "	override bool ScriptedEntityFilterForQuery(IEntity ent)"\
   "	{"\
-  "		if (!DefaultEntityFilterForQuery(ent))"\
-  "			return false;"\
+  "		SCR_ChimeraCharacter cc = SCR_ChimeraCharacter.Cast(ent);"\
+  "		if (!cc) return false; // If the entity is not a person, filter it out"\
+  "		if (cc.GetFactionKey() != \"US\") return false; // If the entity does not have the Faction key of US, filter it out"\
+  "		if (!IsAlive(cc)) return false; // If the entity is dead, filter it out"\
   ""\
   "		SCR_BaseTask killGeneralTask = SCR_BaseTask.Cast(GetGame().FindEntity(\"KillMakarov\"));"\
   ""\

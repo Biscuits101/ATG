@@ -27,13 +27,6 @@ class BISC_CoopTaskManager : SCR_BaseTaskManager
 	// Array of actual task entities
 	protected ref array<SCR_BaseTask> m_aTaskEntities;
 
-	// For optional waypoint markers (add BISC_WaypointMarkerComponent)
-	protected BISC_WaypointMarkerComponent m_pWaypointMarkerComponent;
-
-	// Synchronised Task Id
-	[RplProp(onRplName: "OnWaypointUpdated", condition: RplCondition.None)]
-	protected int m_iCurrentTaskId = -1;
-
 
 	protected override void EOnInit(IEntity owner)
 	{
@@ -61,10 +54,6 @@ class BISC_CoopTaskManager : SCR_BaseTaskManager
 		// Server setup
 		if (m_pRplComponent.IsMaster())
 			ServerInit();
-
-		// Setup for optional waypoint markers
-		if (RplSession.Mode() != RplMode.Dedicated)
-			m_pWaypointMarkerComponent = BISC_WaypointMarkerComponent.Cast(owner.FindComponent(BISC_WaypointMarkerComponent));
 	}
 
 
@@ -168,18 +157,6 @@ class BISC_CoopTaskManager : SCR_BaseTaskManager
 					ShowCurrentTask();
 			}
 
-			// Only sets/bumps on actual changes to cut down on net traffic
-			if (m_iCurrentTaskId != aTask.GetTaskID())
-			{
-				// Update and inform clients
-				m_iCurrentTaskId = aTask.GetTaskID();
-				Replication.BumpMe();
-
-				// Also do self if not dedicated server
-				if (RplSession.Mode() != RplMode.Dedicated)
-					OnWaypointUpdated();
-			}
-
 			// We have already tried to assign a task, so stop searching
 			break;
 		}
@@ -240,11 +217,5 @@ class BISC_CoopTaskManager : SCR_BaseTaskManager
 	{
 		if (m_pUITaskManagerComponent)
 			m_pUITaskManagerComponent.ToggleCurrentTask(true);
-	}
-
-	protected void OnWaypointUpdated()
-	{
-		if (m_pWaypointMarkerComponent)
-			m_pWaypointMarkerComponent.SetWaypoint(m_iCurrentTaskId);
 	}
 }

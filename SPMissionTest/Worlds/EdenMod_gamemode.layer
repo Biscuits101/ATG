@@ -424,14 +424,13 @@ $grp SCR_TriggerTask : "{7259F0B101761BD5}Prefabs/Tasks/MoveTask.et" {
     MainType Task
    }
   }
-  coords 11192.421 3.641 1613.342
+  coords 11187.614 4.388 1619.999
   m_sName "Get to the extraction point"
   m_sDescription "Good job soldier, now get to the extraction point before all hell breaks loose!"
   m_bNotifyAssignment 1
   {
    SCR_BaseFactionTriggerEntity Extract {
     ID "55D072570E7E8ABF"
-    coords 0.098 -0.436 1.286
     userScript "	override bool ScriptedEntityFilterForQuery(IEntity ent)"\
     "	{"\
     "		SCR_ChimeraCharacter cc = SCR_ChimeraCharacter.Cast(ent);"\
@@ -472,9 +471,9 @@ $grp SCR_TriggerTask : "{7259F0B101761BD5}Prefabs/Tasks/MoveTask.et" {
     "		// General Makarov is either still alive or unspawned so mission must not be completed"\
     "		return false;"\
     "	}"
-    SphereRadius 20
+    SphereRadius 8
     ShapeColor 1 0 0 0.392
-    UpdatePeriod 0.5
+    UpdatePeriod 1
     OnActivate ""\
     "		SCR_BaseGameMode gameMode = SCR_BaseGameMode.Cast(GetGame().GetGameMode()); // Get the game mode for the end script"\
     "		Faction faction = GetGame().GetFactionManager().GetFactionByKey(\"US\"); // Get the winning faction Key"\

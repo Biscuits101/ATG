@@ -39,22 +39,19 @@ class BISC_WaypointMarkerComponent : ScriptComponent
 
 	protected void TaskAssigned()
 	{
-		m_bShowWaypoint = true;
+		SCR_BaseTask locallyAssignedTask = SCR_BaseTaskExecutor.GetLocalExecutor().GetAssignedTask();
+
+		if (locallyAssignedTask)
+		{
+			m_pCurrentWaypoint = locallyAssignedTask;
+			m_bShowWaypoint = true;
+		}
 	}
 
 	protected void TaskUnassigned()
 	{
 		m_bShowWaypoint = false;
-	}
-
-	void ClearWaypoint()
-	{
 		m_pCurrentWaypoint = null;
-	}
-
-	void SetWaypoint(int taskId)
-	{
-		m_pCurrentWaypoint = GetTaskManager().GetTask(taskId);
 	}
 
 	protected void WaypointSystemInit()
